@@ -12,11 +12,12 @@ const alunos = [
 const server = new grpc.Server();
 
 server.addService(alunosProto.AlunoService.service, {
-  listar: (_, callback) => {
+  list: (_, callback) => {
     callback(null, { alunos });
   },
 });
 
-server.start();
+server.bind("127.0.0.1:50051", grpc.ServerCredentials.createInsecure());
 
 console.log("Server started on port 50051");
+server.start();

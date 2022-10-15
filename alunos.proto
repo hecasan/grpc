@@ -7,9 +7,9 @@ service AlunoService {
 message Empty { }
 
 message Aluno{
-    string id = 1;
+    int32 id = 1;
     string nome = 2;
-    string email = 3;
+    int32 idade = 3;
 }
 
 message ListaAluno {
