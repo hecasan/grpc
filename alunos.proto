@@ -1,0 +1,17 @@
+syntax = "proto3";  
+
+service AlunoService {
+    rpc List (Empty) returns (ListaAluno) {}
+}
+
+message Empty { }
+
+message Aluno{
+    string id = 1;
+    string nome = 2;
+    string email = 3;
+}
+
+message ListaAluno {
+    repeated Aluno alunos = 1; // Retorna uma Array de Alunos pela prioridade 1 (id)
+}
